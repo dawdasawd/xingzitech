@@ -1,4 +1,7 @@
 {
   "navigationBarTitleText": "uni-app",
+  "backgroundTextStyle": "black",
+  "enablePullDownRefresh": false,
+  "onReachBottomDistance": 50,
   "usingComponents": {}
 }
