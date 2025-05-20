@@ -3,7 +3,10 @@
 		{
 			"path": "pages/index/index",
 			"style": {
-				"navigationBarTitleText": "uni-app"
+				"navigationBarTitleText": "uni-app",
+				"backgroundTextStyle": "black",
+				"enablePullDownRefresh": false,
+				"onReachBottomDistance": 50
 			}
 		}
 	],
@@ -11,7 +14,26 @@
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "uni-app",
 		"navigationBarBackgroundColor": "#F8F8F8",
-		"backgroundColor": "#F8F8F8"
+		"backgroundColor": "#F8F8F8",
+		"navigationStyle": "default"
+	},
+	"tabBar": {
+		"color": "#7A7E83",
+		"selectedColor": "3cc51f",
+		"borderStyle": "black",
+		"backgroundColor": "#ffffff",
+		"position": "bottom",
+		"list": [{
+			"pagePath": "pages/home/index",
+			"iconPath": "/static/image/home_icon.png",
+			"selectedIconPath": "/static/image/home_icon.png",
+			"text": "主页"
+		},{
+			"pagePath": "pages/search/index",
+			"iconPath": "/static/image/search.png",
+			"selectedIconPath": "/static/image/selected_search.png",
+			"text": "星荐"
+		}]
 	},
 	"uniIdRouter": {}
 }
