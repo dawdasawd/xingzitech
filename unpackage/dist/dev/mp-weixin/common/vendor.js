@@ -800,7 +800,7 @@ function populateParameters(result) {
   // wx.getAccountInfoSync
 
   var parameters = {
-    appId: "",
+    appId: "__UNI__AA7C971",
     appName: "xingzitech",
     appVersion: "1.0.0",
     appVersionCode: "100",
@@ -901,7 +901,7 @@ var getAppBaseInfo = {
     var _hostName = getHostName(result);
     var hostLanguage = (language || '').replace('_', '-');
     result = sortObject(Object.assign(result, {
-      appId: "",
+      appId: "__UNI__AA7C971",
       appName: "xingzitech",
       appVersion: "1.0.0",
       appVersionCode: "100",
