@@ -1,7 +1,11 @@
 {
   "navigationBarTitleText": "uni-app",
-  "backgroundTextStyle": "black",
+  "backgroundTextStyle": "dark",
   "enablePullDownRefresh": false,
   "onReachBottomDistance": 50,
-  "usingComponents": {}
+  "usingComponents": {
+    "u-tabs": "/uni_modules/uview-ui/components/u-tabs/u-tabs",
+    "u-switch": "/uni_modules/uview-ui/components/u-switch/u-switch",
+    "u-button": "/uni_modules/uview-ui/components/u-button/u-button"
+  }
 }

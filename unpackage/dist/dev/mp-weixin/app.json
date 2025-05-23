@@ -1,6 +1,9 @@
 {
   "pages": [
-    "pages/index/index"
+    "pages/index/index",
+    "pages/home/home",
+    "pages/search/search",
+    "pages/search-results/search-results"
   ],
   "subPackages": [],
   "window": {
@@ -12,22 +15,28 @@
   },
   "tabBar": {
     "color": "#7A7E83",
-    "selectedColor": "3cc51f",
+    "selectedColor": "#3cc51f",
     "borderStyle": "black",
     "backgroundColor": "#ffffff",
     "position": "bottom",
     "list": [
       {
-        "pagePath": "pages/home/index",
+        "pagePath": "pages/home/home",
         "iconPath": "/static/image/home_icon.png",
         "selectedIconPath": "/static/image/home_icon.png",
         "text": "主页"
       },
       {
-        "pagePath": "pages/search/index",
+        "pagePath": "pages/search/search",
         "iconPath": "/static/image/search.png",
         "selectedIconPath": "/static/image/selected_search.png",
         "text": "星荐"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "/static/image/search.png",
+        "selectedIconPath": "/static/image/selected_search.png",
+        "text": "test"
       }
     ]
   },

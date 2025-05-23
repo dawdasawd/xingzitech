@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "搜索结果",
+  "backgroundTextStyle": "dark",
+  "enablePullDownRefresh": true,
+  "onReachBottomDistance": 50,
+  "usingComponents": {
+    "u-search": "/uni_modules/uview-ui/components/u-search/u-search"
+  }
+}
