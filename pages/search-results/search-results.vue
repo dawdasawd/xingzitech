@@ -4,7 +4,7 @@
 		<view class="search-bar">
 			<view class="location">
 				<text class="city">北京</text>
-				<text class="arrow">></text>
+				<u-icon name="arrow-right" size="28" color="#999"></u-icon>
 			</view>
 			<view class="search-input">
 				<u-search
@@ -31,21 +31,39 @@
 		
 		<!-- 排序选项 -->
 		<view class="sort-options">
-			<view class="option" :class="{active: currentSort === 'smart'}" @click="setSort('smart')">
+			<view class="option" :class="{active: currentSort === 'smart'}" @click="showSortPopup('smart')">
 				<text>智能排序</text>
-				<text class="arrow-down" v-if="currentSort === 'smart'">▼</text>
+				<u-icon name="arrow-down" size="24" :color="currentSort === 'smart' ? '#4285f4' : '#666'"></u-icon>
 			</view>
-			<view class="option" :class="{active: currentSort === 'rating'}" @click="setSort('rating')">
+			<view class="option" :class="{active: currentSort === 'rating'}" @click="showSortPopup('rating')">
 				<text>星级·评分</text>
-				<text class="arrow-down" v-if="currentSort === 'rating'">▼</text>
+				<u-icon name="arrow-down" size="24" :color="currentSort === 'rating' ? '#4285f4' : '#666'"></u-icon>
 			</view>
-			<view class="option" :class="{active: currentSort === 'price'}" @click="setSort('price')">
+			<view class="option" :class="{active: currentSort === 'price'}" @click="showSortPopup('price')">
 				<text>价格</text>
-				<text class="arrow-down" v-if="currentSort === 'price'">▼</text>
+				<u-icon name="arrow-down" size="24" :color="currentSort === 'price' ? '#4285f4' : '#666'"></u-icon>
 			</view>
-			<view class="option" :class="{active: currentSort === 'filter'}" @click="setSort('filter')">
+			<view class="option" :class="{active: currentSort === 'filter'}" @click="showSortPopup('filter')">
 				<text>筛选</text>
-				<text class="arrow-down" v-if="currentSort === 'filter'">▼</text>
+				<u-icon name="arrow-down" size="24" :color="currentSort === 'filter' ? '#4285f4' : '#666'"></u-icon>
+			</view>
+		</view>
+
+		<!-- 排序弹出层 -->
+		<view class="sort-popup" v-if="showPopup" @click.stop>
+			<view class="popup-mask" @click="closePopup"></view>
+			<view class="popup-content" :style="{ top: popupTop + 'px' }">
+				<view 
+					class="sort-item" 
+					v-for="(item, index) in sortOptions" 
+					:key="index"
+					:class="{ active: item.value === selectedSort }"
+					@click="selectSort(item)"
+				>
+					<text class="sort-text">{{item.label}}</text>
+					<text v-if="item.desc" class="sort-desc">{{item.desc}}</text>
+					<u-icon v-if="item.value === selectedSort" name="checkmark" color="#4285f4" size="32"></u-icon>
+				</view>
 			</view>
 		</view>
 		
@@ -81,20 +99,20 @@ export default {
 	data() {
 		return {
 			currentSort: 'smart',
+			showPopup: false,
+			selectedSort: 'smart',
+			popupTop: 0,
+			sortOptions: [
+				{ label: '智能排序', value: 'smart' },
+				{ label: '好评优先', value: 'rating', desc: '高分→低分' },
+				{ label: '评价数', value: 'comment', desc: '评论多→评论少' },
+				{ label: '经验优先', value: 'experience', desc: '上课多→上课少' },
+				{ label: '低价优先', value: 'price_asc' },
+				{ label: '高价优先', value: 'price_desc' }
+			],
 			teachers: [
 				{
-					avatar: '/static/image/home_icon.png',
-					name: '我是LUKA',
-					rating: '985',
-					students: '211',
-					experience: '六年经验',
-					description: '清华大学硕士在读，六年家教经验',
-					subject: '高中化学',
-					price: '200'
-				},
-				// 重复相同的数据以展示多个教师卡片
-				{
-					avatar: '/static/image/home_icon.png',
+					avatar: '/static/image/search.png',
 					name: '我是LUKA',
 					rating: '985',
 					students: '211',
@@ -104,7 +122,17 @@ export default {
 					price: '200'
 				},
 				{
-					avatar: '/static/image/home_icon.png',
+					avatar: '/static/image/search.png',
+					name: '我是LUKA',
+					rating: '985',
+					students: '211',
+					experience: '六年经验',
+					description: '清华大学硕士在读，六年家教经验',
+					subject: '高中化学',
+					price: '200'
+				},
+				{
+					avatar: '/static/image/search.png',
 					name: '我是LUKA',
 					rating: '985',
 					students: '211',
@@ -120,8 +148,48 @@ export default {
 		handleSearchClick() {
 			// 处理搜索框点击
 		},
-		setSort(type) {
-			this.currentSort = type;
+		showSortPopup(type) {
+			if (type === 'smart') {
+				// 获取排序选项的位置
+				const query = uni.createSelectorQuery().in(this);
+				query.select('.sort-options').boundingClientRect(data => {
+					this.popupTop = data.bottom;
+					this.showPopup = true;
+				}).exec();
+			}
+		},
+		closePopup() {
+			this.showPopup = false;
+		},
+		selectSort(item) {
+			this.selectedSort = item.value;
+			this.currentSort = 'smart';
+			this.closePopup();
+			// 这里可以添加排序逻辑
+			this.sortTeachers(item.value);
+		},
+		sortTeachers(sortType) {
+			// 根据不同的排序类型对教师列表进行排序
+			switch(sortType) {
+				case 'rating':
+					// 按评分排序
+					break;
+				case 'comment':
+					// 按评价数排序
+					break;
+				case 'experience':
+					// 按经验排序
+					break;
+				case 'price_asc':
+					// 按价格升序
+					break;
+				case 'price_desc':
+					// 按价格降序
+					break;
+				default:
+					// 智能排序
+					break;
+			}
 		}
 	}
 }
@@ -150,12 +218,6 @@ export default {
 	font-size: 32rpx;
 	font-weight: bold;
 	color: #333;
-}
-
-.arrow {
-	font-size: 24rpx;
-	color: #999;
-	margin-left: 8rpx;
 }
 
 .search-input {
@@ -198,9 +260,58 @@ export default {
 	color: #4285f4;
 }
 
-.arrow-down {
+.sort-popup {
+	position: fixed;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	z-index: 100;
+}
+
+.popup-mask {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background-color: rgba(0, 0, 0, 0.4);
+}
+
+.popup-content {
+	position: absolute;
+	left: 0;
+	right: 0;
+	background-color: #fff;
+	z-index: 101;
+}
+
+.sort-item {
+	position: relative;
+	padding: 30rpx;
+	display: flex;
+	align-items: center;
+	border-bottom: 2rpx solid #f5f5f5;
+}
+
+.sort-item.active {
+	color: #4285f4;
+}
+
+.sort-text {
+	font-size: 28rpx;
+	flex: 1;
+}
+
+.sort-desc {
 	font-size: 24rpx;
-	margin-left: 4rpx;
+	color: #999;
+	margin-left: 20rpx;
+}
+
+.sort-item.active .sort-text {
+	color: #4285f4;
+	font-weight: 500;
 }
 
 .teacher-list {

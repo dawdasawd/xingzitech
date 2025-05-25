@@ -100,8 +100,11 @@ __webpack_require__.r(__webpack_exports__);
 var components
 try {
   components = {
+    uIcon: function () {
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-icon/u-icon */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-icon/u-icon")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-icon/u-icon.vue */ 213))
+    },
     uSearch: function () {
-      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-search/u-search */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-search/u-search")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-search/u-search.vue */ 247))
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-search/u-search */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-search/u-search")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-search/u-search.vue */ 222))
     },
   }
 } catch (e) {
@@ -158,7 +161,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-
+/* WEBPACK VAR INJECTION */(function(uni) {
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -242,23 +245,55 @@ exports.default = void 0;
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var _default = {
   data: function data() {
     return {
       currentSort: 'smart',
+      showPopup: false,
+      selectedSort: 'smart',
+      popupTop: 0,
+      sortOptions: [{
+        label: '智能排序',
+        value: 'smart'
+      }, {
+        label: '好评优先',
+        value: 'rating',
+        desc: '高分→低分'
+      }, {
+        label: '评价数',
+        value: 'comment',
+        desc: '评论多→评论少'
+      }, {
+        label: '经验优先',
+        value: 'experience',
+        desc: '上课多→上课少'
+      }, {
+        label: '低价优先',
+        value: 'price_asc'
+      }, {
+        label: '高价优先',
+        value: 'price_desc'
+      }],
       teachers: [{
-        avatar: '/static/image/home_icon.png',
-        name: '我是LUKA',
-        rating: '985',
-        students: '211',
-        experience: '六年经验',
-        description: '清华大学硕士在读，六年家教经验',
-        subject: '高中化学',
-        price: '200'
-      },
-      // 重复相同的数据以展示多个教师卡片
-      {
-        avatar: '/static/image/home_icon.png',
+        avatar: '/static/image/search.png',
         name: '我是LUKA',
         rating: '985',
         students: '211',
@@ -267,7 +302,16 @@ var _default = {
         subject: '高中化学',
         price: '200'
       }, {
-        avatar: '/static/image/home_icon.png',
+        avatar: '/static/image/search.png',
+        name: '我是LUKA',
+        rating: '985',
+        students: '211',
+        experience: '六年经验',
+        description: '清华大学硕士在读，六年家教经验',
+        subject: '高中化学',
+        price: '200'
+      }, {
+        avatar: '/static/image/search.png',
         name: '我是LUKA',
         rating: '985',
         students: '211',
@@ -282,12 +326,54 @@ var _default = {
     handleSearchClick: function handleSearchClick() {
       // 处理搜索框点击
     },
-    setSort: function setSort(type) {
-      this.currentSort = type;
+    showSortPopup: function showSortPopup(type) {
+      var _this = this;
+      if (type === 'smart') {
+        // 获取排序选项的位置
+        var query = uni.createSelectorQuery().in(this);
+        query.select('.sort-options').boundingClientRect(function (data) {
+          _this.popupTop = data.bottom;
+          _this.showPopup = true;
+        }).exec();
+      }
+    },
+    closePopup: function closePopup() {
+      this.showPopup = false;
+    },
+    selectSort: function selectSort(item) {
+      this.selectedSort = item.value;
+      this.currentSort = 'smart';
+      this.closePopup();
+      // 这里可以添加排序逻辑
+      this.sortTeachers(item.value);
+    },
+    sortTeachers: function sortTeachers(sortType) {
+      // 根据不同的排序类型对教师列表进行排序
+      switch (sortType) {
+        case 'rating':
+          // 按评分排序
+          break;
+        case 'comment':
+          // 按评价数排序
+          break;
+        case 'experience':
+          // 按经验排序
+          break;
+        case 'price_asc':
+          // 按价格升序
+          break;
+        case 'price_desc':
+          // 按价格降序
+          break;
+        default:
+          // 智能排序
+          break;
+      }
     }
   }
 };
 exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ }),
 
