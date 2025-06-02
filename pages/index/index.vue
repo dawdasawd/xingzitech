@@ -129,121 +129,126 @@
 </template>
 
 <script>
-	export default {
-		data() {
-			return {
-				// tabs数据
-				tabList: [
-					{name: '我是学生'},
-					{name: '我是导师'}
-				],
-				currentTab: 0,
-				activeTab: 'student',
-				
-				// picker相关
-				cityIndex: 0,
-				cityOptions: ['海淀区', '朝阳区', '东城区', '西城区', '丰台区', '昌平区', '大兴区', '通州区'],
-				gradeIndex: 0,
-				gradeOptions: ['三年级', '一年级', '二年级', '四年级', '五年级', '六年级', '初一', '初二'],
-				subjectIndex: 0,
-				subjectOptions: ['英语后蒙', '数学', '语文', '物理', '化学', '生物', '历史', '地理'],
-				
-				selectedDay: '周六',
-				selectedPeriod: '上午',
-				multiTimeMode: false,
-				timeOptions: [
-					{id: 1, day: '周五', period: '晚上'},
-					{id: 2, day: '周六', period: '上午'},
-					{id: 3, day: '周六', period: '下午'},
-					{id: 4, day: '周日', period: '上午'},
-					{id: 5, day: '周日', period: '下午'}
-				],
-				
-				// 弹窗相关
-				showPopup: false,
-				currentPickerType: '',
-				currentOptions: [],
-				popupStyle: {},
-				windowWidth: 0
+import subjectData from '@/mock/subject_mock.json'
+
+export default {
+	data() {
+		return {
+			// tabs数据
+			tabList: [
+				{name: '我是学生'},
+				{name: '我是导师'}
+			],
+			currentTab: 0,
+			activeTab: 'student',
+			
+			// picker相关
+			cityIndex: 0,
+			cityOptions: ['海淀区', '朝阳区', '东城区', '西城区', '丰台区', '昌平区', '大兴区', '通州区'],
+			gradeIndex: 0,
+			gradeOptions: ['三年级', '一年级', '二年级', '四年级', '五年级', '六年级', '初一', '初二'],
+			subjectIndex: 0,
+			subjectOptions: [],  // 将在onLoad中填充
+			
+			selectedDay: '周六',
+			selectedPeriod: '上午',
+			multiTimeMode: false,
+			timeOptions: [
+				{id: 1, day: '周五', period: '晚上'},
+				{id: 2, day: '周六', period: '上午'},
+				{id: 3, day: '周六', period: '下午'},
+				{id: 4, day: '周日', period: '上午'},
+				{id: 5, day: '周日', period: '下午'}
+			],
+			
+			// 弹窗相关
+			showPopup: false,
+			currentPickerType: '',
+			currentOptions: [],
+			popupStyle: {},
+			windowWidth: 0
+		}
+	},
+	onLoad() {
+		// 获取系统信息
+		uni.getSystemInfo({
+			success: (res) => {
+				this.windowWidth = res.windowWidth;
 			}
+		});
+		
+		// 从JSON文件加载学科数据
+		this.subjectOptions = subjectData.data;
+	},
+	methods: {
+		switchTab(item) {
+			this.currentTab = item.index;
+			this.activeTab = item.index === 0 ? 'student' : 'teacher';
 		},
-		onLoad() {
-			// 获取系统信息
-			uni.getSystemInfo({
-				success: (res) => {
-					this.windowWidth = res.windowWidth;
-				}
+		
+		showPickerByTap(type, event) {
+			// 设置当前选项
+			switch(type) {
+				case 'city':
+					this.currentOptions = this.cityOptions;
+					break;
+				case 'grade':
+					this.currentOptions = this.gradeOptions;
+					break;
+				case 'subject':
+					this.currentOptions = this.subjectOptions;
+					break;
+			}
+			
+			this.currentPickerType = type;
+			this.showPopup = true;
+		},
+		
+		hidePopup() {
+			this.showPopup = false;
+		},
+		
+		selectOption(index) {
+			switch(this.currentPickerType) {
+				case 'city':
+					this.cityIndex = index;
+					break;
+				case 'grade':
+					this.gradeIndex = index;
+					break;
+				case 'subject':
+					this.subjectIndex = index;
+					break;
+			}
+			this.hidePopup();
+		},
+		
+		selectTime(option) {
+			this.selectedDay = option.day;
+			this.selectedPeriod = option.period;
+		},
+		
+		toggleMultiTime(val) {
+			this.multiTimeMode = val;
+		},
+		
+		handleSearch() {
+			const searchParams = {
+				userType: this.activeTab,
+				city: this.cityOptions[this.cityIndex],
+				grade: this.gradeOptions[this.gradeIndex],
+				subject: this.subjectOptions[this.subjectIndex],
+				time: this.selectedDay + this.selectedPeriod,
+				multiTime: this.multiTimeMode
+			};
+			
+			// 跳转到搜索结果页面
+			uni.navigateTo({
+				url: '/pages/search-results/search-results'
 			});
-		},
-		methods: {
-			switchTab(item) {
-				this.currentTab = item.index;
-				this.activeTab = item.index === 0 ? 'student' : 'teacher';
-			},
-			
-			showPickerByTap(type, event) {
-				// 设置当前选项
-				switch(type) {
-					case 'city':
-						this.currentOptions = this.cityOptions;
-						break;
-					case 'grade':
-						this.currentOptions = this.gradeOptions;
-						break;
-					case 'subject':
-						this.currentOptions = this.subjectOptions;
-						break;
-				}
-				
-				this.currentPickerType = type;
-				this.showPopup = true;
-			},
-			
-			hidePopup() {
-				this.showPopup = false;
-			},
-			
-			selectOption(index) {
-				switch(this.currentPickerType) {
-					case 'city':
-						this.cityIndex = index;
-						break;
-					case 'grade':
-						this.gradeIndex = index;
-						break;
-					case 'subject':
-						this.subjectIndex = index;
-						break;
-				}
-				this.hidePopup();
-			},
-			
-			selectTime(option) {
-				this.selectedDay = option.day;
-				this.selectedPeriod = option.period;
-			},
-			
-			toggleMultiTime(val) {
-				this.multiTimeMode = val;
-			},
-			
-			handleSearch() {
-				const searchParams = {
-					userType: this.activeTab,
-					city: this.cityOptions[this.cityIndex],
-					grade: this.gradeOptions[this.gradeIndex],
-					subject: this.subjectOptions[this.subjectIndex],
-					time: this.selectedDay + this.selectedPeriod,
-					multiTime: this.multiTimeMode
-				};
-				
-				// 跳转到搜索结果页面
-				uni.navigateTo({
-					url: '/pages/search-results/search-results'
-				});
-			}
 		}
 	}
+}
 </script>
 
 <style>

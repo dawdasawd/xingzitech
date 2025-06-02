@@ -51,7 +51,7 @@
 
 		<!-- 排序弹出层 -->
 		<view class="sort-popup" v-if="showPopup" @click.stop>
-			<view class="popup-mask" @click="closePopup"></view>
+			<view class="popup-mask" :style="{ top: popupTop + 'px' }" @click="closePopup"></view>
 			<view class="popup-content" :style="{ top: popupTop + 'px' }">
 				<view 
 					class="sort-item" 
@@ -267,15 +267,16 @@ export default {
 	top: 0;
 	bottom: 0;
 	z-index: 100;
+	pointer-events: none;
 }
 
 .popup-mask {
 	position: absolute;
 	left: 0;
 	right: 0;
-	top: 0;
 	bottom: 0;
 	background-color: rgba(0, 0, 0, 0.4);
+	pointer-events: auto;
 }
 
 .popup-content {
@@ -284,6 +285,7 @@ export default {
 	right: 0;
 	background-color: #fff;
 	z-index: 101;
+	pointer-events: auto;
 }
 
 .sort-item {
