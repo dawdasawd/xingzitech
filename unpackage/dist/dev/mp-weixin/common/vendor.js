@@ -19281,7 +19281,16 @@ exports.default = _default;
 /* 162 */,
 /* 163 */,
 /* 164 */,
-/* 165 */,
+/* 165 */
+/*!******************************************************************************!*\
+  !*** /Users/a1/Documents/HBuilderProjects/xingzitech/mock/subject_mock.json ***!
+  \******************************************************************************/
+/*! exports provided: code, message, data, default */
+/***/ (function(module) {
+
+module.exports = JSON.parse("{\"code\":200,\"message\":\"success\",\"data\":[\"语文\",\"数学\",\"英语\",\"物理\"]}");
+
+/***/ }),
 /* 166 */,
 /* 167 */,
 /* 168 */,
@@ -19308,7 +19317,8 @@ exports.default = _default;
 /* 189 */,
 /* 190 */,
 /* 191 */,
-/* 192 */
+/* 192 */,
+/* 193 */
 /*!*******************************************************************************************************!*\
   !*** /Users/a1/Documents/HBuilderProjects/xingzitech/uni_modules/uview-ui/components/u-tabs/props.js ***!
   \*******************************************************************************************************/
@@ -19390,14 +19400,14 @@ exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ }),
-/* 193 */,
 /* 194 */,
 /* 195 */,
 /* 196 */,
 /* 197 */,
 /* 198 */,
 /* 199 */,
-/* 200 */
+/* 200 */,
+/* 201 */
 /*!*********************************************************************************************************!*\
   !*** /Users/a1/Documents/HBuilderProjects/xingzitech/uni_modules/uview-ui/components/u-switch/props.js ***!
   \*********************************************************************************************************/
@@ -19469,14 +19479,14 @@ exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ }),
-/* 201 */,
 /* 202 */,
 /* 203 */,
 /* 204 */,
 /* 205 */,
 /* 206 */,
 /* 207 */,
-/* 208 */
+/* 208 */,
+/* 209 */
 /*!*************************************************************************************************!*\
   !*** /Users/a1/Documents/HBuilderProjects/xingzitech/uni_modules/uview-ui/libs/mixin/button.js ***!
   \*************************************************************************************************/
@@ -19506,7 +19516,7 @@ var _default = {
 exports.default = _default;
 
 /***/ }),
-/* 209 */
+/* 210 */
 /*!***************************************************************************************************!*\
   !*** /Users/a1/Documents/HBuilderProjects/xingzitech/uni_modules/uview-ui/libs/mixin/openType.js ***!
   \***************************************************************************************************/
@@ -19548,7 +19558,7 @@ var _default = {
 exports.default = _default;
 
 /***/ }),
-/* 210 */
+/* 211 */
 /*!*********************************************************************************************************!*\
   !*** /Users/a1/Documents/HBuilderProjects/xingzitech/uni_modules/uview-ui/components/u-button/props.js ***!
   \*********************************************************************************************************/
@@ -19727,14 +19737,14 @@ exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ }),
-/* 211 */,
 /* 212 */,
 /* 213 */,
 /* 214 */,
 /* 215 */,
 /* 216 */,
 /* 217 */,
-/* 218 */
+/* 218 */,
+/* 219 */
 /*!*******************************************************************************************************!*\
   !*** /Users/a1/Documents/HBuilderProjects/xingzitech/uni_modules/uview-ui/components/u-icon/icons.js ***!
   \*******************************************************************************************************/
@@ -19965,7 +19975,7 @@ var _default = {
 exports.default = _default;
 
 /***/ }),
-/* 219 */
+/* 220 */
 /*!*******************************************************************************************************!*\
   !*** /Users/a1/Documents/HBuilderProjects/xingzitech/uni_modules/uview-ui/components/u-icon/props.js ***!
   \*******************************************************************************************************/
@@ -20072,14 +20082,14 @@ exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ }),
-/* 220 */,
 /* 221 */,
 /* 222 */,
 /* 223 */,
 /* 224 */,
 /* 225 */,
 /* 226 */,
-/* 227 */
+/* 227 */,
+/* 228 */
 /*!*********************************************************************************************************!*\
   !*** /Users/a1/Documents/HBuilderProjects/xingzitech/uni_modules/uview-ui/components/u-search/props.js ***!
   \*********************************************************************************************************/
@@ -20215,14 +20225,14 @@ exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ }),
-/* 228 */,
 /* 229 */,
 /* 230 */,
 /* 231 */,
 /* 232 */,
 /* 233 */,
 /* 234 */,
-/* 235 */
+/* 235 */,
+/* 236 */
 /*!********************************************************************************************************!*\
   !*** /Users/a1/Documents/HBuilderProjects/xingzitech/uni_modules/uview-ui/components/u-badge/props.js ***!
   \********************************************************************************************************/
@@ -20312,14 +20322,14 @@ exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ }),
-/* 236 */,
 /* 237 */,
 /* 238 */,
 /* 239 */,
 /* 240 */,
 /* 241 */,
 /* 242 */,
-/* 243 */
+/* 243 */,
+/* 244 */
 /*!***************************************************************************************************************!*\
   !*** /Users/a1/Documents/HBuilderProjects/xingzitech/uni_modules/uview-ui/components/u-loading-icon/props.js ***!
   \***************************************************************************************************************/
