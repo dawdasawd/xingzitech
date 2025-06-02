@@ -1,0 +1,82 @@
+{
+    "code": 200,
+    "message": "success",
+    "data": {
+        "recommend_list": [
+            {
+                "course_card": {
+                    "user_info": {
+                        "id": 1,
+                        "username": "我是Luka",
+                        "avatar_url": "",
+                        "tags": ["985", "211"],
+                        "is_verified": true,
+                        "status": "active",
+                        "profile": "清华大学硕士在读，六年教龄"
+                    },
+                    "course_info": {
+                        "id": 1,
+                        "subject": "化学",
+                        "hourly_rate": 200
+                    }
+                }
+            },
+            {
+                "course_card": {
+                    "user_info": {
+                        "id": 1,
+                        "username": "我是Luka",
+                        "avatar_url": "",
+                        "tags": ["985", "211"],
+                        "is_verified": true,
+                        "status": "active",
+                        "profile": "清华大学硕士在读，六年教龄"
+                    },
+                    "course_info": {
+                        "id": 1,
+                        "subject": "",
+                        "hourly_rate": 200
+                    }
+                }
+            },
+            {
+                "course_card": {
+                    "user_info": {
+                        "id": 1,
+                        "username": "我是Luka",
+                        "avatar_url": "",
+                        "tags": ["985", "211"],
+                        "is_verified": true,
+                        "status": "active",
+                        "profile": "清华大学硕士在读，六年教龄"
+                    },
+                    "course_info": {
+                        "id": 1,
+                        "subject": "",
+                        "hourly_rate": 200
+                    }
+                }
+            },
+            {
+                "course_card": {
+                    "user_info": {
+                        "id": 1,
+                        "username": "我是Luka",
+                        "avatar_url": "",
+                        "tags": ["985", "211"],
+                        "is_verified": true,
+                        "status": "active",
+                        "profile": "清华大学硕士在读，六年教龄"
+                    },
+                    "course_info": {
+                        "id": 1,
+                        "subject": "",
+                        "hourly_rate": 200
+                    }
+                }
+            }
+        ],
+        "offset": 10,
+        "min_score": 100
+    }
+}
