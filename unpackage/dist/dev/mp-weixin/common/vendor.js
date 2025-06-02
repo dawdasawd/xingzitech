@@ -19311,14 +19311,24 @@ module.exports = JSON.parse("{\"code\":200,\"message\":\"success\",\"data\":[\"�
 /* 183 */,
 /* 184 */,
 /* 185 */,
-/* 186 */,
+/* 186 */
+/*!******************************************************************************************!*\
+  !*** /Users/a1/Documents/HBuilderProjects/xingzitech/mock/teacher_list_search_mock.json ***!
+  \******************************************************************************************/
+/*! exports provided: code, message, data, default */
+/***/ (function(module) {
+
+module.exports = JSON.parse("{\"code\":200,\"message\":\"success\",\"data\":{\"recommend_list\":[{\"course_card\":{\"user_info\":{\"id\":1,\"username\":\"我是Luka\",\"avatar_url\":\"\",\"tags\":[\"985\",\"211\"],\"is_verified\":true,\"status\":\"active\",\"profile\":\"清华大学硕士在读，六年教龄\"},\"course_info\":{\"id\":1,\"subject\":\"化学\",\"hourly_rate\":200}}},{\"course_card\":{\"user_info\":{\"id\":1,\"username\":\"我是Luka\",\"avatar_url\":\"\",\"tags\":[\"985\",\"211\"],\"is_verified\":true,\"status\":\"active\",\"profile\":\"清华大学硕士在读，六年教龄\"},\"course_info\":{\"id\":1,\"subject\":\"\",\"hourly_rate\":200}}},{\"course_card\":{\"user_info\":{\"id\":1,\"username\":\"我是Luka\",\"avatar_url\":\"\",\"tags\":[\"985\",\"211\"],\"is_verified\":true,\"status\":\"active\",\"profile\":\"清华大学硕士在读，六年教龄\"},\"course_info\":{\"id\":1,\"subject\":\"\",\"hourly_rate\":200}}},{\"course_card\":{\"user_info\":{\"id\":1,\"username\":\"我是Luka\",\"avatar_url\":\"\",\"tags\":[\"985\",\"211\"],\"is_verified\":true,\"status\":\"active\",\"profile\":\"清华大学硕士在读，六年教龄\"},\"course_info\":{\"id\":1,\"subject\":\"\",\"hourly_rate\":200}}}],\"offset\":10,\"min_score\":100}}");
+
+/***/ }),
 /* 187 */,
 /* 188 */,
 /* 189 */,
 /* 190 */,
 /* 191 */,
 /* 192 */,
-/* 193 */
+/* 193 */,
+/* 194 */
 /*!*******************************************************************************************************!*\
   !*** /Users/a1/Documents/HBuilderProjects/xingzitech/uni_modules/uview-ui/components/u-tabs/props.js ***!
   \*******************************************************************************************************/
@@ -19400,14 +19410,14 @@ exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ }),
-/* 194 */,
 /* 195 */,
 /* 196 */,
 /* 197 */,
 /* 198 */,
 /* 199 */,
 /* 200 */,
-/* 201 */
+/* 201 */,
+/* 202 */
 /*!*********************************************************************************************************!*\
   !*** /Users/a1/Documents/HBuilderProjects/xingzitech/uni_modules/uview-ui/components/u-switch/props.js ***!
   \*********************************************************************************************************/
@@ -19479,14 +19489,14 @@ exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ }),
-/* 202 */,
 /* 203 */,
 /* 204 */,
 /* 205 */,
 /* 206 */,
 /* 207 */,
 /* 208 */,
-/* 209 */
+/* 209 */,
+/* 210 */
 /*!*************************************************************************************************!*\
   !*** /Users/a1/Documents/HBuilderProjects/xingzitech/uni_modules/uview-ui/libs/mixin/button.js ***!
   \*************************************************************************************************/
@@ -19516,7 +19526,7 @@ var _default = {
 exports.default = _default;
 
 /***/ }),
-/* 210 */
+/* 211 */
 /*!***************************************************************************************************!*\
   !*** /Users/a1/Documents/HBuilderProjects/xingzitech/uni_modules/uview-ui/libs/mixin/openType.js ***!
   \***************************************************************************************************/
@@ -19558,7 +19568,7 @@ var _default = {
 exports.default = _default;
 
 /***/ }),
-/* 211 */
+/* 212 */
 /*!*********************************************************************************************************!*\
   !*** /Users/a1/Documents/HBuilderProjects/xingzitech/uni_modules/uview-ui/components/u-button/props.js ***!
   \*********************************************************************************************************/
@@ -19737,14 +19747,14 @@ exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ }),
-/* 212 */,
 /* 213 */,
 /* 214 */,
 /* 215 */,
 /* 216 */,
 /* 217 */,
 /* 218 */,
-/* 219 */
+/* 219 */,
+/* 220 */
 /*!*******************************************************************************************************!*\
   !*** /Users/a1/Documents/HBuilderProjects/xingzitech/uni_modules/uview-ui/components/u-icon/icons.js ***!
   \*******************************************************************************************************/
@@ -19975,7 +19985,7 @@ var _default = {
 exports.default = _default;
 
 /***/ }),
-/* 220 */
+/* 221 */
 /*!*******************************************************************************************************!*\
   !*** /Users/a1/Documents/HBuilderProjects/xingzitech/uni_modules/uview-ui/components/u-icon/props.js ***!
   \*******************************************************************************************************/
@@ -20082,14 +20092,14 @@ exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ }),
-/* 221 */,
 /* 222 */,
 /* 223 */,
 /* 224 */,
 /* 225 */,
 /* 226 */,
 /* 227 */,
-/* 228 */
+/* 228 */,
+/* 229 */
 /*!*********************************************************************************************************!*\
   !*** /Users/a1/Documents/HBuilderProjects/xingzitech/uni_modules/uview-ui/components/u-search/props.js ***!
   \*********************************************************************************************************/
@@ -20225,14 +20235,14 @@ exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ }),
-/* 229 */,
 /* 230 */,
 /* 231 */,
 /* 232 */,
 /* 233 */,
 /* 234 */,
 /* 235 */,
-/* 236 */
+/* 236 */,
+/* 237 */
 /*!********************************************************************************************************!*\
   !*** /Users/a1/Documents/HBuilderProjects/xingzitech/uni_modules/uview-ui/components/u-badge/props.js ***!
   \********************************************************************************************************/
@@ -20322,14 +20332,14 @@ exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 2)["default"]))
 
 /***/ }),
-/* 237 */,
 /* 238 */,
 /* 239 */,
 /* 240 */,
 /* 241 */,
 /* 242 */,
 /* 243 */,
-/* 244 */
+/* 244 */,
+/* 245 */
 /*!***************************************************************************************************************!*\
   !*** /Users/a1/Documents/HBuilderProjects/xingzitech/uni_modules/uview-ui/components/u-loading-icon/props.js ***!
   \***************************************************************************************************************/
