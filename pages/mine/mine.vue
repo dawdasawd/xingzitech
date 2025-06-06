@@ -16,7 +16,7 @@
             </view>
           </view>
         </view>
-        <view class="right">
+        <view class="right" @tap="handleSpaceClick">
           <text class="space">空间</text>
           <text class="arrow">></text>
         </view>
@@ -94,6 +94,11 @@ export default {
     handleAvatarClick() {
       uni.navigateTo({
         url: '/pages/personal-info-edit/personal-info-edit'
+      })
+    },
+    handleSpaceClick() {
+      uni.navigateTo({
+        url: '/pages/personal-info/personal-info'
       })
     }
   }
