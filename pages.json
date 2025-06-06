@@ -1,6 +1,13 @@
 {
   "pages": [
     {
+      "path": "pages/mine/mine",
+      "style": {
+        "navigationBarTitleText": "我的",
+        "navigationStyle": "custom"
+      }
+    },
+    {
       "path": "pages/login/login",
       "style": {
         "navigationBarTitleText": "登录",
@@ -53,7 +60,7 @@
   },
   "tabBar": {
     "color": "#7A7E83",
-    "selectedColor": "#3cc51f",
+    "selectedColor": "#4080FF",
     "borderStyle": "black",
     "backgroundColor": "#ffffff",
     "position": "bottom",
@@ -68,11 +75,17 @@
       "selectedIconPath": "/static/image/selected_search.png",
       "text": "星荐"
     },
-    {
-      "pagePath": "pages/index/index",
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "/static/image/search.png",
+        "selectedIconPath": "/static/image/selected_search.png",
+        "text": "test"
+      }
+    ,{
+      "pagePath": "pages/mine/mine",
       "iconPath": "/static/image/search.png",
       "selectedIconPath": "/static/image/selected_search.png",
-      "text": "test"
+      "text": "我的"
     }]
   },
   "uniIdRouter": {}
