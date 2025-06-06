@@ -32,6 +32,8 @@
 </template>
 
 <script>
+import { login } from '../../api-request/user.js'
+
 export default {
   data() {
     return {
@@ -40,15 +42,41 @@ export default {
       agreed: false
     }
   },
+  onLoad() {
+    // 检查是否已登录
+    const token = uni.getStorageSync('token')
+    if (token) {
+      uni.reLaunch({
+        url: '/pages/home/home'
+      })
+    }
+  },
   methods: {
-    handleLogin() {
-      if (!this.account || !this.password) {
+    validateInput() {
+      if (!this.account) {
         uni.showToast({
-          title: '请输入账号和密码',
+          title: '请输入账号',
           icon: 'none'
         })
-        return
+        return false
       }
+      if (!this.password) {
+        uni.showToast({
+          title: '请输入密码',
+          icon: 'none'
+        })
+        return false
+      }
+      if (this.password.length < 6) {
+        uni.showToast({
+          title: '密码长度不能小于6位',
+          icon: 'none'
+        })
+        return false
+      }
+      return true
+    },
+    async handleLogin() {
       if (!this.agreed) {
         uni.showToast({
           title: '请先同意用户协议',
@@ -56,7 +84,38 @@ export default {
         })
         return
       }
-      // TODO: 实现登录逻辑
+      
+      if (!this.validateInput()) {
+        return
+      }
+
+      try {
+        // const res = await login({
+        //   account: this.account,
+        //   password: this.password
+        // })
+
+        // var flagSuccess = res.code === 200;
+        var flagSuccess = true;
+        
+        if (flagSuccess) {
+            // var token = res.data.token;
+            var token = '1234567890';
+          // 保存token
+          uni.setStorageSync('token', token)
+          
+          // 跳转到主页
+          uni.reLaunch({
+            url: '/pages/home/home'
+          })
+        }
+      } catch (error) {
+        console.error(error)
+        uni.showToast({
+          title: '登录失败，请重试',
+          icon: 'none'
+        })
+      }
     }
   }
 }

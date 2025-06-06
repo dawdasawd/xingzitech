@@ -1,12 +1,16 @@
 import operate from './operate.js'
 const http = (options) => {
 	return new Promise((resolve, reject) => {
+		// 获取token
+		const token = uni.getStorageSync('token')
+		
 		uni.request({
 			url: operate.api() + options.url, //接口地址：前缀+方法中传入的地址
-			method: options.method || 'GET', //请求方法：传入的方法或者默认是“GET”
+			method: options.method || 'GET', //请求方法：传入的方法或者默认是"GET"
 			data: options.data || {}, //传递参数：传入的参数或者默认传递空集合
 			header: {
-			   ...options.header, //请求头信息
+				'Authorization': token ? `Bearer ${token}` : '', // 添加token到请求头
+				...options.header, //请求头信息
 			},
 			success: (res) => {
 				if(res.data.code!==200){ //自定请求失败的情况
