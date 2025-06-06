@@ -96,6 +96,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import '../../static/styles/iconfont.css';
+
 .mine-container {
   min-height: 100vh;
   background-color: #f5f5f5;
@@ -224,8 +226,15 @@ export default {
 
             .iconfont {
               font-size: 48rpx;
-              color: #666;
+              color: #4080FF;
               margin-bottom: 10rpx;
+              display: inline-block;
+              width: 80rpx;
+              height: 80rpx;
+              line-height: 80rpx;
+              text-align: center;
+              background-color: #EBF3FF;
+              border-radius: 50%;
             }
 
             .item-text {
