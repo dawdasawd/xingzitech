@@ -4,7 +4,7 @@
     <view class="user-info">
       <view class="user-header">
         <view class="left">
-          <image class="avatar" :src="userInfo.avatar" mode="aspectFill"></image>
+          <image class="avatar" :src="userInfo.avatar" mode="aspectFill" @tap="handleAvatarClick"></image>
           <view class="user-detail">
             <view class="name-level">
               <text class="nickname">{{userInfo.nickname}}</text>
@@ -90,6 +90,11 @@ export default {
     },
     handleSwitchChange(event, group, item) {
       item.value = event.detail.value
+    },
+    handleAvatarClick() {
+      uni.navigateTo({
+        url: '/pages/personal-info-edit/personal-info-edit'
+      })
     }
   }
 }
@@ -161,6 +166,11 @@ export default {
         display: flex;
         align-items: center;
         color: #666;
+        
+        &:active {
+          opacity: 0.7;
+          transform: scale(0.98);
+        }
 
         .space {
           font-size: 28rpx;
@@ -182,6 +192,11 @@ export default {
 
       .stat-item {
         text-align: center;
+        
+        &:active {
+          opacity: 0.7;
+          transform: scale(0.98);
+        }
 
         .number {
           font-size: 32rpx;
@@ -217,6 +232,11 @@ export default {
           width: 20%;
           padding: 20rpx;
           box-sizing: border-box;
+          
+          &:active {
+            opacity: 0.7;
+            transform: scale(0.98);
+          }
           
           .item-content {
             display: flex;

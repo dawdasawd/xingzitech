@@ -1,6 +1,13 @@
 {
   "pages": [
     {
+      "path": "pages/personal-info-edit/personal-info-edit",
+      "style": {
+        "navigationBarTitleText": "编辑资料",
+        "navigationStyle": "default"
+      }
+    },
+    {
       "path": "pages/mine/mine",
       "style": {
         "navigationBarTitleText": "我的",
