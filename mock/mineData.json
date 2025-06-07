@@ -1,0 +1,126 @@
+{
+  "userInfo": {
+    "avatar": "/static/logo.png",
+    "nickname": "春暖花开",
+    "level": "lv.1",
+    "income": "*******",
+    "starValue": 99,
+    "stats": {
+      "posts": 69,
+      "follows": 233,
+      "fans": 327
+    }
+  },
+  "menuGroups": [
+    {
+      "title": "",
+      "items": [
+        {
+          "icon": "clock",
+          "text": "足迹",
+          "path": "/pages/footprint/footprint"
+        },
+        {
+          "icon": "star",
+          "text": "收藏",
+          "path": "/pages/collection/collection"
+        },
+        {
+          "icon": "edit",
+          "text": "草稿箱",
+          "path": "/pages/drafts/drafts"
+        }
+      ]
+    },
+    {
+      "title": "身份管理",
+      "items": [
+        {
+          "text": "作为学生",
+          "type": "switch",
+          "value": true
+        }
+      ]
+    },
+    {
+      "title": "订单管理",
+      "items": [
+        {
+          "icon": "wallet",
+          "text": "待支付",
+          "path": "/pages/orders/unpaid"
+        },
+        {
+          "icon": "calendar",
+          "text": "已预约",
+          "path": "/pages/orders/booked"
+        },
+        {
+          "icon": "comment",
+          "text": "评价",
+          "path": "/pages/orders/reviews"
+        },
+        {
+          "icon": "check",
+          "text": "已完成",
+          "path": "/pages/orders/completed"
+        },
+        {
+          "icon": "close",
+          "text": "已取消",
+          "path": "/pages/orders/cancelled"
+        }
+      ]
+    },
+    {
+      "title": "",
+      "items": [
+        {
+          "icon": "user",
+          "text": "我的老师",
+          "path": "/pages/my-teachers/index"
+        },
+        {
+          "icon": "book",
+          "text": "我的课程",
+          "path": "/pages/my-courses/index"
+        },
+        {
+          "icon": "map",
+          "text": "我的地址",
+          "path": "/pages/my-addresses/index"
+        }
+      ]
+    },
+    {
+      "title": "基础功能",
+      "items": [
+        {
+          "icon": "wallet",
+          "text": "钱包",
+          "path": "/pages/wallet/index"
+        },
+        {
+          "icon": "headset",
+          "text": "客服",
+          "path": "/pages/customer-service/index"
+        },
+        {
+          "icon": "info",
+          "text": "关于我们",
+          "path": "/pages/about/index"
+        },
+        {
+          "icon": "message",
+          "text": "留言反馈",
+          "path": "/pages/feedback/index"
+        },
+        {
+          "icon": "settings",
+          "text": "设置",
+          "path": "/pages/settings/index"
+        }
+      ]
+    }
+  ]
+}

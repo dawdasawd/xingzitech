@@ -1,0 +1,45 @@
+{
+  "userInfo": {
+    "nickname": "我是Luka",
+    "avatar": "/static/image/avatar.png",
+    "gender": "男",
+    "description": "清华大学预科中，二模数学110，英语120，语文126，好学，虚心，好评无数。250字内完全展示。",
+    "tags": ["高中化学", "高中数学", "高中英语"],
+    "stats": {
+      "posts": 985,
+      "follows": 211,
+      "fans": 145,
+      "rating": 9.6
+    },
+    "certification": {
+      "education": "清华大学预科",
+      "teachingExperience": "六年教龄",
+      "subjects": ["化学", "数学", "英语"],
+      "achievements": ["教学成果奖", "优秀教师"],
+      "certificates": ["教师资格证", "心理咨询师证"]
+    },
+    "courses": [
+      {
+        "subject": "高中化学",
+        "price": 200,
+        "unit": "h",
+        "rating": 4.8,
+        "students": 128
+      },
+      {
+        "subject": "高中数学",
+        "price": 180,
+        "unit": "h",
+        "rating": 4.9,
+        "students": 156
+      },
+      {
+        "subject": "高中英语",
+        "price": 160,
+        "unit": "h",
+        "rating": 4.7,
+        "students": 98
+      }
+    ]
+  }
+}

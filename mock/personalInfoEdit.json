@@ -1,0 +1,46 @@
+{
+  "avatar": "/static/logo.png",
+  "fields": [
+    {
+      "label": "姓名",
+      "key": "name",
+      "type": "text",
+      "required": true,
+      "placeholder": "请填写",
+      "maxLength": 20
+    },
+    {
+      "label": "性别",
+      "key": "gender",
+      "type": "radio",
+      "required": true,
+      "options": [
+        { "label": "女", "value": "female" },
+        { "label": "男", "value": "male" }
+      ]
+    },
+    {
+      "label": "自述",
+      "key": "description",
+      "type": "textarea",
+      "required": false,
+      "placeholder": "介绍一下自己，你的经历、性格、教学风格等",
+      "maxLength": 250
+    },
+    {
+      "label": "个人标签",
+      "key": "tags",
+      "type": "tags",
+      "required": false,
+      "placeholder": "8字符内",
+      "maxTags": 4,
+      "maxLength": 8
+    }
+  ],
+  "stats": [
+    { "label": "985", "value": true },
+    { "label": "211", "value": true },
+    { "label": "三年经验", "value": false },
+    { "label": "教师资格证", "value": true }
+  ]
+}
