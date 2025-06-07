@@ -69,25 +69,24 @@
 		
 		<!-- 教师列表 -->
 		<view class="teacher-list">
-			<view class="teacher-card" v-for="(teacher, index) in teachers" :key="index">
+			<view class="teacher-card" v-for="(item, index) in teachers" :key="index">
 				<view class="teacher-info">
-					<image class="avatar" :src="teacher.avatar" mode="aspectFill"></image>
+					<image class="avatar" :src="item.course_card.user_info.avatar_url || '/static/image/search.png'" mode="aspectFill"></image>
 					<view class="info-content">
 						<view class="name-wrap">
-							<text class="name">{{teacher.name}}</text>
-							<image class="verified-icon" src="/static/image/search.png" mode="aspectFit"></image>
+							<text class="name">{{item.course_card.user_info.username}}</text>
+							<image v-if="item.course_card.user_info.is_verified" class="verified-icon" src="/static/image/search.png" mode="aspectFit"></image>
 						</view>
 						<view class="stats">
-							<text class="stat">{{teacher.rating}}</text>
-							<text class="stat">{{teacher.students}}</text>
-							<text class="stat">{{teacher.experience}}</text>
+							<text v-for="(tag, tagIndex) in item.course_card.user_info.tags" :key="tagIndex" class="stat">{{tag}}</text>
+							<text class="stat">{{item.course_card.user_info.status}}</text>
 						</view>
-						<text class="description">{{teacher.description}}</text>
+						<text class="description">{{item.course_card.user_info.profile}}</text>
 					</view>
 				</view>
-				<view class="subject-price">
-					<text class="subject">{{teacher.subject}}</text>
-					<text class="price">{{teacher.price}}/h</text>
+				<view class="right-content">
+					<text class="subject">{{item.course_card.course_info.subject || '暂无科目'}}</text>
+					<text class="price">{{item.course_card.course_info.hourly_rate}}元/h</text>
 				</view>
 			</view>
 		</view>
@@ -95,6 +94,8 @@
 </template>
 
 <script>
+import teacherListData from '@/mock/teacher_list_search_mock.json'
+
 export default {
 	data() {
 		return {
@@ -110,39 +111,12 @@ export default {
 				{ label: '低价优先', value: 'price_asc' },
 				{ label: '高价优先', value: 'price_desc' }
 			],
-			teachers: [
-				{
-					avatar: '/static/image/search.png',
-					name: '我是LUKA',
-					rating: '985',
-					students: '211',
-					experience: '六年经验',
-					description: '清华大学硕士在读，六年家教经验',
-					subject: '高中化学',
-					price: '200'
-				},
-				{
-					avatar: '/static/image/search.png',
-					name: '我是LUKA',
-					rating: '985',
-					students: '211',
-					experience: '六年经验',
-					description: '清华大学硕士在读，六年家教经验',
-					subject: '高中化学',
-					price: '200'
-				},
-				{
-					avatar: '/static/image/search.png',
-					name: '我是LUKA',
-					rating: '985',
-					students: '211',
-					experience: '六年经验',
-					description: '清华大学硕士在读，六年家教经验',
-					subject: '高中化学',
-					price: '200'
-				}
-			]
+			teachers: []
 		}
+	},
+	onLoad() {
+		// 直接使用 mock 数据文件中的数据
+		this.teachers = teacherListData.data.recommend_list;
 	},
 	methods: {
 		handleSearchClick() {
@@ -317,26 +291,31 @@ export default {
 }
 
 .teacher-list {
-	padding: 0 30rpx;
+	padding: 20rpx 30rpx;
 }
 
 .teacher-card {
 	background-color: #fff;
-	border-radius: 20rpx;
-	padding: 30rpx;
+	border-radius: 32rpx;
+	padding: 24rpx 30rpx;
 	margin-bottom: 20rpx;
+	box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.02);
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
 }
 
 .teacher-info {
-	display: flex;
-	margin-bottom: 20rpx;
+	flex: 1;
+	margin-right: 20rpx;
 }
 
 .avatar {
-	width: 100rpx;
-	height: 100rpx;
+	width: 72rpx;
+	height: 72rpx;
 	border-radius: 50%;
-	margin-right: 20rpx;
+	margin-right: 16rpx;
+	border: 1px solid #f5f5f5;
 }
 
 .info-content {
@@ -346,56 +325,64 @@ export default {
 .name-wrap {
 	display: flex;
 	align-items: center;
-	margin-bottom: 10rpx;
+	margin-bottom: 16rpx;
 }
 
 .name {
 	font-size: 32rpx;
-	font-weight: bold;
 	color: #333;
-	margin-right: 10rpx;
+	margin-right: 12rpx;
+	font-weight: 600;
 }
 
 .verified-icon {
-	width: 32rpx;
-	height: 32rpx;
+	width: 36rpx;
+	height: 36rpx;
+	color: #4285f4;
 }
 
 .stats {
-	margin-bottom: 10rpx;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 16rpx;
+	margin-bottom: 16rpx;
 }
 
 .stat {
-	font-size: 24rpx;
-	color: #666;
-	background-color: #f5f7fa;
-	padding: 4rpx 16rpx;
-	border-radius: 20rpx;
-	margin-right: 16rpx;
+	font-size: 26rpx;
+	color: #4285f4;
+	background-color: rgba(66, 133, 244, 0.1);
+	padding: 8rpx 24rpx;
+	border-radius: 100rpx;
 }
 
 .description {
-	font-size: 26rpx;
+	font-size: 28rpx;
 	color: #999;
+	line-height: 1.4;
 }
 
-.subject-price {
+.right-content {
 	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	border-top: 2rpx solid #f0f0f0;
-	padding-top: 20rpx;
+	flex-direction: column;
+	align-items: flex-end;
+	gap: 16rpx;
 }
 
 .subject {
-	font-size: 30rpx;
+	font-size: 32rpx;
 	color: #333;
-	font-weight: 500;
+	font-weight: 600;
 }
 
 .price {
-	font-size: 36rpx;
+	font-size: 40rpx;
 	color: #4285f4;
 	font-weight: bold;
+	background-color: rgba(66, 133, 244, 0.1);
+	padding: 12rpx 36rpx;
+	border-radius: 100rpx;
+	min-width: 200rpx;
+	text-align: center;
 }
 </style> 
