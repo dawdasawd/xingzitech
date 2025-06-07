@@ -4,7 +4,7 @@
       "path": "pages/personal-info/personal-info",
       "style": {
         "navigationBarTitleText": "个人主页",
-        "navigationStyle": "default"
+        "navigationStyle": "custom"
       }
     },
     {

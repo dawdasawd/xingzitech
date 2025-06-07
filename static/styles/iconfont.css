@@ -1,0 +1,71 @@
+@font-face {
+  font-family: "iconfont";
+  src: url('data:font/woff2;charset=utf-8;base64,BASE64_CONTENT') format('woff2');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-clock:before {
+  content: "\e900";
+}
+
+.icon-star:before {
+  content: "\e901";
+}
+
+.icon-edit:before {
+  content: "\e902";
+}
+
+.icon-wallet:before {
+  content: "\e903";
+}
+
+.icon-calendar:before {
+  content: "\e904";
+}
+
+.icon-comment:before {
+  content: "\e905";
+}
+
+.icon-check:before {
+  content: "\e906";
+}
+
+.icon-close:before {
+  content: "\e907";
+}
+
+.icon-user:before {
+  content: "\e908";
+}
+
+.icon-book:before {
+  content: "\e909";
+}
+
+.icon-map:before {
+  content: "\e90a";
+}
+
+.icon-headset:before {
+  content: "\e90b";
+}
+
+.icon-info:before {
+  content: "\e90c";
+}
+
+.icon-message:before {
+  content: "\e90d";
+}
+
+.icon-settings:before {
+  content: "\e90e";
+}
