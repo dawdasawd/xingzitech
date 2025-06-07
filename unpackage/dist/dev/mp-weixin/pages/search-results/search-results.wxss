@@ -101,23 +101,28 @@
 	font-weight: 500;
 }
 .teacher-list {
-	padding: 0 30rpx;
+	padding: 20rpx 30rpx;
 }
 .teacher-card {
 	background-color: #fff;
-	border-radius: 20rpx;
-	padding: 30rpx;
+	border-radius: 32rpx;
+	padding: 24rpx 30rpx;
 	margin-bottom: 20rpx;
+	box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.02);
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
 }
 .teacher-info {
-	display: flex;
-	margin-bottom: 20rpx;
+	flex: 1;
+	margin-right: 20rpx;
 }
 .avatar {
-	width: 100rpx;
-	height: 100rpx;
+	width: 72rpx;
+	height: 72rpx;
 	border-radius: 50%;
-	margin-right: 20rpx;
+	margin-right: 16rpx;
+	border: 1px solid #f5f5f5;
 }
 .info-content {
 	flex: 1;
@@ -125,48 +130,56 @@
 .name-wrap {
 	display: flex;
 	align-items: center;
-	margin-bottom: 10rpx;
+	margin-bottom: 16rpx;
 }
 .name {
 	font-size: 32rpx;
-	font-weight: bold;
 	color: #333;
-	margin-right: 10rpx;
+	margin-right: 12rpx;
+	font-weight: 600;
 }
 .verified-icon {
-	width: 32rpx;
-	height: 32rpx;
+	width: 36rpx;
+	height: 36rpx;
+	color: #4285f4;
 }
 .stats {
-	margin-bottom: 10rpx;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 16rpx;
+	margin-bottom: 16rpx;
 }
 .stat {
-	font-size: 24rpx;
-	color: #666;
-	background-color: #f5f7fa;
-	padding: 4rpx 16rpx;
-	border-radius: 20rpx;
-	margin-right: 16rpx;
+	font-size: 26rpx;
+	color: #4285f4;
+	background-color: rgba(66, 133, 244, 0.1);
+	padding: 8rpx 24rpx;
+	border-radius: 100rpx;
 }
 .description {
-	font-size: 26rpx;
+	font-size: 28rpx;
 	color: #999;
+	line-height: 1.4;
 }
-.subject-price {
+.right-content {
 	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	border-top: 2rpx solid #f0f0f0;
-	padding-top: 20rpx;
+	flex-direction: column;
+	align-items: flex-end;
+	gap: 16rpx;
 }
 .subject {
-	font-size: 30rpx;
+	font-size: 32rpx;
 	color: #333;
-	font-weight: 500;
+	font-weight: 600;
 }
 .price {
-	font-size: 36rpx;
+	font-size: 40rpx;
 	color: #4285f4;
 	font-weight: bold;
+	background-color: rgba(66, 133, 244, 0.1);
+	padding: 12rpx 36rpx;
+	border-radius: 100rpx;
+	min-width: 200rpx;
+	text-align: center;
 }
 
