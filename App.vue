@@ -6,6 +6,10 @@
 	export default {
 		onLaunch: function() {
 			console.log('App Launch')
+			// 直接跳转到登录页
+			uni.reLaunch({
+				url: '/pages/login/login'
+			})
 		},
 		onShow: function() {
 			console.log('App Show')

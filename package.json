@@ -1,4 +1,15 @@
 {
+  "name": "xingzitech",
+  "version": "1.0.0",
+  "description": "星子科技",
+  "scripts": {
+    "dev:h5": "/Applications/HBuilderX.app/Contents/MacOS/cli publish --project /Users/a1/Documents/HBuilderProjects/xingzitech --platform h5 --mode dev",
+    "build:h5": "/Applications/HBuilderX.app/Contents/MacOS/cli publish --project /Users/a1/Documents/HBuilderProjects/xingzitech --platform h5",
+    "dev:mp-weixin": "/Applications/HBuilderX.app/Contents/MacOS/cli publish --project /Users/a1/Documents/HBuilderProjects/xingzitech --platform mp-weixin --mode dev",
+    "build:mp-weixin": "/Applications/HBuilderX.app/Contents/MacOS/cli publish --project /Users/a1/Documents/HBuilderProjects/xingzitech --platform mp-weixin",
+    "dev:app-plus": "/Applications/HBuilderX.app/Contents/MacOS/cli publish --project /Users/a1/Documents/HBuilderProjects/xingzitech --platform app --mode dev",
+    "build:app-plus": "/Applications/HBuilderX.app/Contents/MacOS/cli publish --project /Users/a1/Documents/HBuilderProjects/xingzitech --platform app"
+  },
   "devDependencies": {
     "sass": "^1.89.0",
     "sass-loader": "^16.0.5"

@@ -45,11 +45,11 @@ export default {
   onLoad() {
     // 检查是否已登录
     const token = uni.getStorageSync('token')
-    if (token) {
-      uni.reLaunch({
-        url: '/pages/home/home'
-      })
-    }
+    // if (token) {
+    //   uni.reLaunch({
+    //     url: '/pages/home/home'
+    //   })
+    // }
   },
   methods: {
     validateInput() {
