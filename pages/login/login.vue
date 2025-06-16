@@ -90,23 +90,21 @@ export default {
       }
 
       try {
-        // const res = await login({
-        //   account: this.account,
-        //   password: this.password
-        // })
+        const res = await login(this.account, this.password);
 
-        // var flagSuccess = res.code === 200;
-        var flagSuccess = true;
-        
-        if (flagSuccess) {
-            // var token = res.data.token;
-            var token = '1234567890';
+        res.data
+        if (res.data.code === 0) {
           // 保存token
-          uni.setStorageSync('token', token)
+          uni.setStorageSync('token', res.data.data.token)
           
           // 跳转到主页
           uni.reLaunch({
             url: '/pages/home/home'
+          })
+        } else {
+          uni.showToast({
+            title: res.data.message || '登录失败',
+            icon: 'none'
           })
         }
       } catch (error) {
